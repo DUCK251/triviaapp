@@ -83,8 +83,7 @@ def create_app(test_config=None):
     return jsonify({
       'questions': questions,
       'total_questions': db.session.query(Question).count(),
-      'categories': formatted_categories,
-      'current_category': None
+      'categories': formatted_categories
     })
 
   '''
@@ -136,8 +135,7 @@ def create_app(test_config=None):
         questions = [question.format() for question in selection]
         return jsonify({
           'questions': questions,
-          'total_questions': total_questions,
-          'current_category': None
+          'total_questions': total_questions
         })
       else:
         if None in [new_question, new_answer, new_difficulty, new_category]:
@@ -185,8 +183,7 @@ def create_app(test_config=None):
 
       return jsonify({
         'questions':questions,
-        'total_questions':total_questions,
-        'current_category':None
+        'total_questions':total_questions
       })
     except:
       abort(422)

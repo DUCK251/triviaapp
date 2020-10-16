@@ -107,7 +107,6 @@ One note before you delve into your tasks: for each endpoint you are expected to
     "5": "Entertainment", 
     "6": "Sports"
   }, 
-  "current_category": null, 
   "questions": [
     {
       "answer": "Maya Angelou", 
@@ -194,7 +193,6 @@ One note before you delve into your tasks: for each endpoint you are expected to
 - Sample : `curl http://127.0.0.1:5000/categories/1/questions`
 ```
 {
-  "current_category": null, 
   "questions": [
     {
       "answer": "The Liver", 
@@ -241,7 +239,6 @@ One note before you delve into your tasks: for each endpoint you are expected to
 - Sample : `curl -X POST http://127.0.0.1:5000/questions -d'{"searchTerm":"what"}' -H "Content-Type:application/json"`
 ```
 {
-  "current_category": null, 
   "questions": [
     {
       "answer": "Muhammad Ali", 
