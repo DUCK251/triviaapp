@@ -72,8 +72,8 @@ One note before you delve into your tasks: for each endpoint you are expected to
 
 - General:
     - Fetches a dictionary of categories in which the keys are the ids and the value is the corresponding string of the category
-    - Request Arguments: `None`
-    - Returns : `categories, success`
+    - Request Arguments: None
+    - Returns : categories, success
 - Sample : `curl http://127.0.0.1:5000/categories`
 ```
 {
@@ -94,7 +94,7 @@ One note before you delve into your tasks: for each endpoint you are expected to
 - General:
     - Fetches a list of questions objects, the number of total questions and an object about all categories
     - Results are paginated in groups of 10. Include a request argument to choose page number, starting from 1.
-    - Request Arguments : `None`
+    - Request Arguments : None
     - Returns : a list of questions, the number of total questions, a dictionary of categories
 - Sample : `curl http://127.0.0.1:5000/questions`
 ```
@@ -189,7 +189,7 @@ One note before you delve into your tasks: for each endpoint you are expected to
 - General:
     - Fetches all questions of a category satisfying `category_id`
     - Results are paginated in groups of 10. Include a request argument to choose page number, starting from 1.
-    - Request Arguments : `None`
+    - Request Arguments : None
     - Returns : a list of questions and the number of total questions
 - Sample : `curl http://127.0.0.1:5000/categories/1/questions`
 ```
@@ -227,7 +227,7 @@ One note before you delve into your tasks: for each endpoint you are expected to
 - Create:
     - Create a question by sending question, answer, difficulty and category. All of them should be submitted.
     - Request Arguments : question, answer, difficulty, category
-    - Returns : `success`
+    - Returns : success
 - Sample : `curl -X POST http://127.0.0.1:5000/questions -d '{"question": "What is the capital of South Korea?", "answer": "Seoul", "difficulty": "3", "category" : "3"}' -H "Content-Type:application/json"`
 ```
 {
@@ -236,7 +236,7 @@ One note before you delve into your tasks: for each endpoint you are expected to
 ```
 - Search:
     - Search questions including a searh term.
-    - Request Arguments : `searchTerm`
+    - Request Arguments : searchTerm
     - Returns : a list of questions and the number of total questions
 - Sample : `curl -X POST http://127.0.0.1:5000/questions -d'{"searchTerm":"what"}' -H "Content-Type:application/json"`
 ```
@@ -308,8 +308,8 @@ One note before you delve into your tasks: for each endpoint you are expected to
 
 - General:
     - Deletes the question of the given ID if it exists. Returns value of success.
-    - Request Arguments : `None`
-    - Returns : `success`
+    - Request Arguments : None
+    - Returns : success
     - If the given ID is not valid, returns 422 error.
 - Sample : `curl -X DELETE http://127.0.0.1:5000/1`
 ```
@@ -323,8 +323,8 @@ One note before you delve into your tasks: for each endpoint you are expected to
 - General:
     - Get a quiz except previous quizzes
     - Request Arguments : a list of id of previous quizzes and an object of category id and type
-    - Returns : `question`
-    - If no question is left for quizzes, returns `None`
+    - Returns : question
+    - If no question is left for quizzes, returns None
 - Sample : `curl -X POST http://127.0.0.1:5000/quizzes -d'{"previous_questions":[], "quiz_category":{"id":"0","type":"Science"}}' -H "Content-Type:application/json"`
 ```
 {
